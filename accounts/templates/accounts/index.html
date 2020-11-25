@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="">
+	<title>Top</title>
+</head>
+<body>
+	<h1>こんにちは</h1>
+	{% if user.is_authenticated %}
+	<a href="{% url 'logout' %}">ログアウト</a>
+	<a href="{% url 'create' %}">create</a>
+	<div>
+		{% for item in todo %}
+		<p>{{ item.title }}</p>
+		<p>{{ item.contents }}</p>
+		<p>{{item.created_at}}</p>
+		{% endfor %}
+	</div>
+	{% else %}
+	<a href="{% url 'new_accounts' %}">会員登録</a>
+	<a href="{% url 'login' %}">ログイン</a>
+	{% endif %}
+</body>
+</html>

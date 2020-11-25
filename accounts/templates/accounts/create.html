@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="">
+	<title>TODO</title>
+</head>
+<body>
+    <div class = "container">
+        <div class = "create_todo">
+            <h2>CreateTodo.</h2>
+            <div class = "input_form">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class = "button">
+                        <button>OK.</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
